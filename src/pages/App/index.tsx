@@ -1,7 +1,7 @@
 import { Cards } from '../../components';
 import LoaderCards from '../../components/LoaderCards';
 import { useFetchData } from '../../hooks';
-import './App.css';
+import './app.css';
 
 function App() {
   const [data, isLoading] = useFetchData(

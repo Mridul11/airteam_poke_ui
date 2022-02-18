@@ -5,23 +5,23 @@ export default function useFetchData(url: string, dependencies: any[]) {
   const [data, dataSet] = useState<any>([]);
 
   useEffect((): any => {
-    const cached = window.localStorage.getItem('cached');
+    const cached = window.localStorage.getItem(`cached-${url}`);
     console.log(JSON.parse(String(cached)));
 
     isLoadingSet(true);
-    if ('cached' in window.localStorage) {
+    if (`cached-${url}` in window.localStorage) {
       dataSet(JSON.parse(String(cached)));
       isLoadingSet(false);
-    }else{
+    } else {
       fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        window.localStorage.setItem('cached', JSON.stringify(data));
-        dataSet(data);
-        isLoadingSet(false);
-      })
-      .catch((err) => console.log(err));
-    }    
+        .then((res) => res.json())
+        .then((data) => {
+          window.localStorage.setItem(`cached-${url}`, JSON.stringify(data));
+          dataSet(data);
+          isLoadingSet(false);
+        })
+        .catch((err) => console.log(err));
+    }
   }, dependencies);
 
   return [data, isLoading];
