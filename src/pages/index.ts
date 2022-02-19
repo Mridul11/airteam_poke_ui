@@ -1,3 +1,4 @@
-import App from '../pages/App/App';
+import App from './App';
+import About from '../pages/About';
 
-export { App };
+export { App, About };

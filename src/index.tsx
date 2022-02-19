@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './pages';
+import AppRoutes from './app-routes';
 import reportWebVitals from './reportWebVitals';
-import { PagesHeader } from './components';
 
 ReactDOM.render(
   <React.StrictMode>
-    <PagesHeader />
-    <App />
+    <AppRoutes />
   </React.StrictMode>,
   document.getElementById('root')
 );
+
 reportWebVitals();

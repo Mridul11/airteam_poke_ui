@@ -4,10 +4,10 @@ import { useState } from 'react';
 const { Meta } = Card;
 
 const LoaderCards = () => {
-  const [loader, _] = useState(true);
+  const [loader] = useState(true);
 
   return (
-    <>
+    <div data-testid='test-loadercard'>
       <Card style={{ width: 300, marginTop: 16 }} loading={loader}>
         <Meta
           avatar={<Avatar src='https://joeschmoe.io/api/v1/random' />}
@@ -25,7 +25,7 @@ const LoaderCards = () => {
           />
         </Skeleton>
       </Card>
-    </>
+    </div>
   );
 };
 
