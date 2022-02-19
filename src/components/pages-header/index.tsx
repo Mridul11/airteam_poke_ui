@@ -1,12 +1,13 @@
 import './pages-header.css';
 import { Menu } from 'antd';
 import { Header } from 'antd/lib/layout/layout';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function PagesHeader() {
   const [selectedKey, selectedKeySet] = useState('1');
   const navigate = useNavigate();
+  const path = window.location.pathname;
 
   return (
     <>
@@ -39,8 +40,11 @@ export default function PagesHeader() {
               navigate('/');
             }}
           >
-            Home
+            HOME
           </Menu.Item>
+          {path.indexOf('about') !== -1 ? (
+            <Menu.Item key='3'>ABOUT</Menu.Item>
+          ) : null}
         </Menu>
       </Header>
     </>

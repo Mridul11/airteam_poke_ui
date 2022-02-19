@@ -18,7 +18,7 @@ const Cards = ({ name, url, index }: CardsProps) => {
         <Card cover={<img alt='example' src={CARDIMAGE} />}>
           <Meta
             avatar={<Avatar src={AVATARIMAGE} />}
-            title={name}
+            title={name.toUpperCase()}
             description={
               <Button>
                 <Link to={`/about/${index}`}>Know More</Link>
