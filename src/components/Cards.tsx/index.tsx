@@ -8,20 +8,20 @@ const AVATARIMAGE = `https://images.unsplash.com/photo-1542779283-429940ce8336?i
 type CardsProps = {
   name: string;
   url: string;
+  index: number;
 };
 
 const { Meta } = Card;
 
-const Cards = ({ name, url }: CardsProps) => {
+const Cards = ({ name, url, index }: CardsProps) => {
   return (
     <div className='cards-spacing'>
       <Card cover={<img alt='example' src={CARDIMAGE} />}>
         <Meta
           avatar={<Avatar src={AVATARIMAGE} />}
           title={name}
-          description={url}
+          description={<Link to={`/about/${index}`}>Know More</Link>}
         />
-        <Link to='/about'>Know More</Link>
       </Card>
     </div>
   );

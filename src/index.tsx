@@ -11,10 +11,11 @@ ReactDOM.render(
     <Router>
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/about/:id' element={<About />} />
       </Routes>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
 reportWebVitals();

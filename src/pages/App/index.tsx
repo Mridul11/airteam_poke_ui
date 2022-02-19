@@ -12,7 +12,7 @@ function App() {
     return (
       <div className='App-body'>
         {data.results.map((pokemon: any, index: number) => (
-          <Cards key={index} name={pokemon.name} url={pokemon.url} />
+          <Cards key={index} name={pokemon.name} url={pokemon.url} index={index+1} />
         ))}
       </div>
     );
