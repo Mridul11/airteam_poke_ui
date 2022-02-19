@@ -20,9 +20,6 @@ const Description = ({ data }: DescriptionProps) => {
             </Descriptions.Item>
           </>
         ))}
-
-      <Descriptions.Item label='Defence'>empty</Descriptions.Item>
-      <Descriptions.Item label='Speed'>empty</Descriptions.Item>
     </Descriptions>
   );
 };
