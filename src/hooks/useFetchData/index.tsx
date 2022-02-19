@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchDataService } from '../../api';
+import { fetchDataService } from '../../helpers/api';
 
 export default function useFetchData(url: string, dependencies: Array<any>) {
   const [isLoading, isLoadingSet] = useState(false);

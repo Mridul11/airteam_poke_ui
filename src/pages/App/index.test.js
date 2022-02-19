@@ -2,7 +2,7 @@ import { mount, shallow, render } from 'enzyme';
 import axios from 'axios';
 
 import App from '.';
-import { fetchDataService } from '../../api';
+import { fetchDataService } from '../../helpers/api';
 import { POKEMONURI } from '../../utils';
 
 describe('App Component', () => {
