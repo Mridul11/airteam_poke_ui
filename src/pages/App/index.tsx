@@ -3,7 +3,7 @@ import { useFetchData } from '../../hooks';
 import { POKEMONURI } from '../../utils';
 import './app.css';
 
-function App() {
+const App = () => {
   const [data, isLoading] = useFetchData(POKEMONURI, []);
   const cardsWithData = () => (
     <div className='App-body'>
@@ -32,6 +32,6 @@ function App() {
       {data.results && !isLoading ? cardsWithData() : cardsWithoutData()}
     </div>
   );
-}
+};
 
 export default App;
