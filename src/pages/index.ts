@@ -1,4 +1,4 @@
-import App from './App';
-import About from '../pages/About';
+import App from './app';
+import About from './about';
 
 export { App, About };

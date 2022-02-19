@@ -1,5 +1,5 @@
 import './cards.css';
-import { Card, Avatar } from 'antd';
+import { Card, Avatar, Tooltip, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { CARDIMAGE, AVATARIMAGE } from '../../utils';
 
@@ -14,13 +14,19 @@ const { Meta } = Card;
 const Cards = ({ name, url, index }: CardsProps) => {
   return (
     <div className='cards-spacing' data-testid='test-cards'>
-      <Card cover={<img alt='example' src={CARDIMAGE} />}>
-        <Meta
-          avatar={<Avatar src={AVATARIMAGE} />}
-          title={name}
-          description={<Link to={`/about/${index}`}>Know More</Link>}
-        />
-      </Card>
+      <Tooltip placement='topLeft' title={name}>
+        <Card cover={<img alt='example' src={CARDIMAGE} />}>
+          <Meta
+            avatar={<Avatar src={AVATARIMAGE} />}
+            title={name}
+            description={
+              <Button>
+                <Link to={`/about/${index}`}>Know More</Link>
+              </Button>
+            }
+          />
+        </Card>
+      </Tooltip>
     </div>
   );
 };

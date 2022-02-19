@@ -1,5 +1,5 @@
 import { Cards } from '../../components';
-import LoaderCards from '../../components/LoaderCards';
+import LoaderCards from '../../components/loader-cards';
 import { useFetchData } from '../../hooks';
 import { POKEMONURI } from '../../utils';
 import './app.css';
