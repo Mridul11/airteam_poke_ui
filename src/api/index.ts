@@ -1,14 +1,11 @@
-import { useEffect, useState } from 'react';
+interface LoadingCallback{ (isLoading: boolean): void}
+interface DataCallback{ (data: []): void}
 
-export default function useFetchData(url: string, dependencies: any[]) {
-  const [isLoading, isLoadingSet] = useState(false);
-  const [data, dataSet] = useState<any>([]);
-
-  useEffect((): any => {
+export const fetchDataService = (url: string, isLoadingSet: LoadingCallback, dataSet: DataCallback) => {
+    let fetchedData = {};
     const cached = window.localStorage.getItem(`cached-${url}`);
     console.log(JSON.parse(String(cached)));
-
-    isLoadingSet(true);
+    // isLoadingSet(true);
     if (`cached-${url}` in window.localStorage) {
       dataSet(JSON.parse(String(cached)));
       isLoadingSet(false);
@@ -18,11 +15,10 @@ export default function useFetchData(url: string, dependencies: any[]) {
         .then((data) => {
           window.localStorage.setItem(`cached-${url}`, JSON.stringify(data));
           dataSet(data);
+          fetchedData = data;
           isLoadingSet(false);
         })
         .catch((err) => console.log(err));
     }
-  }, dependencies);
-
-  return [data, isLoading];
-}
+    return fetchedData;
+  };
