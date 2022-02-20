@@ -9,14 +9,14 @@ self.addEventListener('install', event => {
                 '/robots.txt',
                 '/favicon.ico',
                 '/index.html',
-                '/',
+                '/'
             ])
         })
     )
 });
 
 self.addEventListener('fetch', function(event) {
-    console.log(event.request.url);
+    console.log('wq1',event.request.url);
    
     event.respondWith(
       caches.match(event.request).then(function(response) {
