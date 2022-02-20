@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cards component renders cards element 1`] = `
+<div
+  class="cards-spacing"
+  data-testid="test-cards"
+>
+  <div
+    class="ant-card ant-card-bordered"
+  >
+    <div
+      class="ant-card-cover"
+    >
+      <img
+        alt="example"
+        src="main.jpeg"
+      />
+    </div>
+    <div
+      class="ant-card-body"
+    >
+      <div
+        class="ant-card-meta"
+      >
+        <div
+          class="ant-card-meta-avatar"
+        >
+          <span
+            class="ant-avatar ant-avatar-circle ant-avatar-image"
+          >
+            <img
+              src="avatar.jpeg"
+            />
+          </span>
+        </div>
+        <div
+          class="ant-card-meta-detail"
+        >
+          <div
+            class="ant-card-meta-title"
+          >
+            NAME
+          </div>
+          <div
+            class="ant-card-meta-description"
+          >
+            <button
+              class="ant-btn ant-btn-default"
+              type="button"
+            >
+              <a
+                href="/about/0"
+              >
+                Know More
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

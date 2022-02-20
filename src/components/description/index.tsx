@@ -7,7 +7,7 @@ type DescriptionProps = {
   key: number;
 };
 
-const Description = ({ data, key }: DescriptionProps) => {
+const Description = ({ data }: DescriptionProps) => {
   const [descriptionImage, setDescriptionImage] = useState<string>('');
   const IMAGE_PATH = data?.sprites.other['official-artwork'].front_default;
   useEffect(() => {

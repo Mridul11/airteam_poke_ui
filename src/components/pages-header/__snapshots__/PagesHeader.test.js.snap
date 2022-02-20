@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesHeader component renders PagesHeader element 1`] = `
+<span
+  class="ant-menu-title-content"
+>
+  POKEDEK
+</span>
+`;
