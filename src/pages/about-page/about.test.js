@@ -2,11 +2,11 @@ import { shallow } from 'enzyme';
 import AddWatchMedia from '../../utils/test-utils/add-matchmedia';
 import About from '.';
 
-describe('App Component', () => {
+describe('About Component', () => {
   let wrapper;
   beforeAll(AddWatchMedia);
   beforeEach(() => (wrapper = shallow(<About />)));
-  it('should render correctly', () => {
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
