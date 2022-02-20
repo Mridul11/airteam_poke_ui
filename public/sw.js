@@ -4,7 +4,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
             cache.addAll([
-                '/static/js/bundle.js',
+                '/bundle',
                 '/manifest.json',
                 '/robots.txt',
                 '/favicon.ico',
