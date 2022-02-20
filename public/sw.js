@@ -28,14 +28,9 @@ self.addEventListener('fetch', event => {
  * Helper methods
  */
 function fromCache(request) {
-    return caches.match(request).then((resp) => {
-        return resp || fetch(request).then((response) => {
-          return caches.open(CACHE_NAME).then((cache) => {
-            cache.put(request, response.clone());
-            return response;
-          });
-        });
-      });
+    return caches.open(CACHE_NAME).then(cache => {
+        return cache.match(request);
+    });
 }
 
 function update(request) {
