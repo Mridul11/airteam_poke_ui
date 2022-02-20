@@ -1,28 +1,43 @@
 import { Descriptions, Image } from 'antd';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import getBase64FromUrl from '../../helpers/blob-store';
 
 type DescriptionProps = {
   data: any;
 };
 
 const Description = ({ data }: DescriptionProps) => {
+  const [descriptionImage, setDescriptionImage] = useState<string>('');
   const IMAGE_PATH = data?.sprites.other['official-artwork'].front_default;
-  const reader = new FileReader();
   useEffect(() => {
     function loadImage() {
-      reader.addEventListener('load', () => {
-        localStorage.setItem('recent-img', IMAGE_PATH);
-        console.log(reader.result);
-      });
-
+      if (!localStorage.getItem(`description-img-${IMAGE_PATH}-${data.name}`)) {
+        getBase64FromUrl(IMAGE_PATH).then((val) => {
+          setDescriptionImage(val + '');
+          localStorage.setItem(
+            `description-img-${IMAGE_PATH}-${data.name}`,
+            val + ''
+          );
+        });
+      } else {
+        setDescriptionImage(
+          localStorage.getItem(`description-img-${IMAGE_PATH}-${data.name}`) +
+            ''
+        );
+      }
     }
     loadImage();
-  }, [IMAGE_PATH]);
+  }, []);
 
+  console.log(descriptionImage);
   return (
     <Descriptions title='Pokemon Info'>
       <Descriptions.Item label='IMAGE'>
-        <Image src={IMAGE_PATH} width={200} alt='Image is somewehere else...' />
+        <Image
+          src={descriptionImage}
+          width={200}
+          alt='Image is somewehere else...'
+        />
       </Descriptions.Item>
       <Descriptions.Item label='NAME'>{data.name}</Descriptions.Item>
       {data &&

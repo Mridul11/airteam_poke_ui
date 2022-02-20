@@ -7,18 +7,20 @@ type CardsProps = {
   url: string;
   index: number;
   mainImage: string;
-  avatar: string;
+  avatarImage: string;
 };
 
 const { Meta } = Card;
 
-const Cards = ({ name, url, index, mainImage, avatar }: CardsProps) => {
+const Cards = ({ name, url, index, mainImage, avatarImage }: CardsProps) => {
+  // console.log(mainImage, avatarImage);
+
   return (
     <div className='cards-spacing' data-testid='test-cards'>
       <Tooltip placement='topLeft' title={name}>
         <Card cover={<img alt='example' src={mainImage} />}>
           <Meta
-            avatar={<Avatar src={avatar} />}
+            avatar={<Avatar src={avatarImage} />}
             title={name.toUpperCase()}
             description={
               <Button>
