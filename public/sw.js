@@ -22,7 +22,7 @@ self.addEventListener('activate', e => {
     e.waitUntil(caches.keys().then(cacheNames => {
         return Promise.all(
             cacheNames.map(cache => {
-                if(cache !== cacheName){
+                if(cache !== CACHE_NAME){
                     console.log('cleaning old cache!');
                     return caches.delete(cache);
                 }
