@@ -32,7 +32,7 @@ const App = () => {
       }
     }
     loadImage();
-  }, [MAINIMAGE, AVATARIMAGE]);
+  }, []);
 
   const cardsWithData = () => (
     <div className='App-body'>
