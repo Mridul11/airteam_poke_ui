@@ -12,15 +12,31 @@ self.addEventListener('install', event => {
                 '/'
             ])
         })
-    )
+        .then(() => self.skipWaiting())
+    );
 });
 
-self.addEventListener('fetch', function(event) {
-    console.log('wq1',event.request.url);
-   
-    event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      })
+self.addEventListener('activate', e => {
+    console.log('service worker activated!');
+
+    e.waitUntil(caches.keys().then(cacheNames => {
+        return Promise.all(
+            cacheNames.map(cache => {
+                if(cache !== cacheName){
+                    console.log('cleaning old cache!');
+                    return caches.delete(cache);
+                }
+            })
+        )
+    })
+    );
+});
+
+// fetch event
+self.addEventListener('fetch', e => {
+    console.log('fetching...');
+
+    e.respondWith(
+        fetch(e.request).catch(() => caches.match(e.request))
     );
 });
