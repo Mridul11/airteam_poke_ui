@@ -1,4 +1,5 @@
 import { Descriptions, Image } from 'antd';
+import { useEffect } from 'react';
 
 type DescriptionProps = {
   data: any;
@@ -6,6 +7,18 @@ type DescriptionProps = {
 
 const Description = ({ data }: DescriptionProps) => {
   const IMAGE_PATH = data?.sprites.other['official-artwork'].front_default;
+  const reader = new FileReader();
+  useEffect(() => {
+    function loadImage() {
+      reader.addEventListener('load', () => {
+        localStorage.setItem('recent-img', IMAGE_PATH);
+        console.log(reader.result);
+      });
+
+    }
+    loadImage();
+  }, [IMAGE_PATH]);
+
   return (
     <Descriptions title='Pokemon Info'>
       <Descriptions.Item label='IMAGE'>

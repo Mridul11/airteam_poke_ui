@@ -1,10 +1,13 @@
+import './app.css';
 import { Cards, LoaderCards } from '../../components';
 import { useFetchData } from '../../hooks';
 import { POKEMONURI } from '../../utils';
-import './app.css';
+import MAINIMAGE from '../../assets/images/main.jpeg';
+import AVATARIMAGE from '../../assets/images/avatar.jpeg';
 
 const App = () => {
   const [data, isLoading] = useFetchData(POKEMONURI, []);
+
   const cardsWithData = () => (
     <div className='App-body'>
       {data.results.map((pokemon: any, index: number) => (
@@ -13,6 +16,8 @@ const App = () => {
           name={pokemon.name}
           url={pokemon.url}
           index={index + 1}
+          mainImage={MAINIMAGE}
+          avatar={AVATARIMAGE}
         />
       ))}
     </div>
