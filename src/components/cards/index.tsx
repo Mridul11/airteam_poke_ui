@@ -13,7 +13,6 @@ type CardsProps = {
 const { Meta } = Card;
 
 const Cards = ({ name, url, index, mainImage, avatarImage }: CardsProps) => {
-  // console.log(mainImage, avatarImage);
 
   return (
     <div className='cards-spacing' data-testid='test-cards'>

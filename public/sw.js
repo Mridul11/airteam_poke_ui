@@ -1,11 +1,10 @@
 const cacheData = 'apiV1';
 
 self.addEventListener('install', event => {
-    event.waitUntill(
+    event.waitUntil(
         caches.open(cacheData).then(cache => {
             cache.addAll([
                 '/static/js/bundle.js',
-                '/static/js/hook.js',
                 '/manifest.json',
                 '/robots.txt',
                 '/favicon.ico',
@@ -16,13 +15,17 @@ self.addEventListener('install', event => {
     )
 });
 
-
 self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request).then(response => {
-            if(response){
-                return response;
-            }
-        })
-    )
+    const url = new URL(event.request.url);
+    if(url.origin == location.origin){
+        event.respondWith(
+            caches.match(event.request).then(response => {
+                if(response){
+                    return response;
+                }else{
+                    return;
+                }
+            })
+        )
+    }   
 });

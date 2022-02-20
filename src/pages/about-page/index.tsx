@@ -10,7 +10,7 @@ export default function About() {
 
   return (
     <div className='about-center'>
-      {Object.keys(data).length ? <Description data={data} /> : <Spinner />}
+      {Object.keys(data).length ? <Description data={data} key={data.id} /> : <Spinner />}
     </div>
   );
 }

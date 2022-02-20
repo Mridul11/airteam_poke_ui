@@ -1,6 +1,11 @@
 const getBase64FromUrl = async (url: string) => {
-  const data = await fetch(url);
-  const blob = await data.blob();
+  let data;
+  if (!Object.keys(localStorage).includes(url)) {
+    data = await fetch(url);
+  }else{
+    data = await fetch(localStorage.getItem(url)+'');
+  }
+  const blob = await data?.blob();
   return new Promise((resolve) => {
     const reader = new FileReader();
     reader.readAsDataURL(blob);
