@@ -10,7 +10,8 @@ if (typeof importScripts === 'function') {
     workbox.core.skipWaiting();
 
     /* injection point for manifest files.  */
-    workbox.precaching.precacheAndRoute(this.__WB_MANIFEST);
+    /* eslint-disable no-undef */
+    workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
 
     /* custom cache rules */
     workbox.routing.registerRoute(
