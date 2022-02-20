@@ -15,28 +15,12 @@ self.addEventListener('install', event => {
     )
 });
 
-self.addEventListener('fetch', event => {
-    event.respondWith(fromCache(event.request)) 
-    
-    // update cache
-    event.waitUntil(update(event.request));
+self.addEventListener('fetch', function(event) {
+    console.log(event.request.url);
+   
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+        return response || fetch(event.request);
+      })
+    );
 });
-
-
-/**
- * 
- * Helper methods
- */
-function fromCache(request) {
-    return caches.open(CACHE_NAME).then(cache => {
-        return cache.match(request);
-    });
-}
-
-function update(request) {
-    caches.open(CACHE_NAME).then( cache => {
-        fetch(request).then( response => {
-        cache.put(request, response)
-        });
-    });
-}
