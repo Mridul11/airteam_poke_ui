@@ -37,7 +37,7 @@ const Description = ({ data, key }: DescriptionProps) => {
         <Image
           src={descriptionImage}
           width={200}
-          alt='Image is somewehere else...'
+          alt='I am image alternative...'
         />
       </Descriptions.Item>
       <Descriptions.Item label='NAME'>{data.name}</Descriptions.Item>

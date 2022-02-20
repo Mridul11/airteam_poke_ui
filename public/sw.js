@@ -1,8 +1,8 @@
-const cacheData = 'apiV1';
+const CACHE_NAME = 'apiV1';
 
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(cacheData).then(cache => {
+        caches.open(CACHE_NAME).then(cache => {
             cache.addAll([
                 '/static/js/bundle.js',
                 '/manifest.json',
@@ -16,16 +16,27 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
-    const url = new URL(event.request.url);
-    if(url.origin == location.origin){
-        event.respondWith(
-            caches.match(event.request).then(response => {
-                if(response){
-                    return response;
-                }else{
-                    return;
-                }
-            })
-        )
-    }   
+    event.respondWith(fromCache(event.request)) 
+    
+    // update cache
+    event.waitUntil(update(event.request));
 });
+
+
+/**
+ * 
+ * Helper methods
+ */
+function fromCache(request) {
+    return caches.open(CACHE_NAME).then(cache => {
+        return cache.match(request);
+    });
+}
+
+function update(request) {
+    caches.open(CACHE_NAME).then( cache => {
+        fetch(request).then( response => {
+        cache.put(request, response)
+        });
+    });
+}
