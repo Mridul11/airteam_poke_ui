@@ -45,7 +45,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint src",
     "prettier:fix": "prettier --write",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "e2e": "yarn cypress run --browser chrome"
   },
   "eslintConfig": {
     "extends": [
