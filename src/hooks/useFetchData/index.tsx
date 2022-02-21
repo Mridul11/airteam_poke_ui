@@ -11,9 +11,9 @@ export default function useFetchData(url: string, dependencies: Array<any>) {
       fetchDataService(url, isLoadingSet, dataSet);
     }
 
-    return  () => {
+    return () => {
       isApiSubscribed = false;
-      }
+    };
   }, dependencies);
 
   return [data, isLoading];

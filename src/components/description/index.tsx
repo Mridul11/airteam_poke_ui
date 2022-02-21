@@ -23,7 +23,6 @@ const Description = ({ data }: DescriptionProps) => {
     loadImage();
   }, []);
 
-  console.log(data);
   return (
     <Descriptions title='Pokemon Info'>
       <Descriptions.Item label='IMAGE'>
