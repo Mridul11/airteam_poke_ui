@@ -7,11 +7,3 @@ exports[`About Component should match snapshot 1`] = `
   <Spinner />
 </div>
 `;
-
-exports[`App Component should render correctly 1`] = `
-<div
-  className="about-center"
->
-  <Spinner />
-</div>
-`;

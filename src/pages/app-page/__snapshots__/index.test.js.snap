@@ -7,6 +7,7 @@ exports[`App Component should render correctly 1`] = `
 >
   <div
     className="App-body"
+    data-testid="test-cardswithoutdata"
   >
     <LoaderCards
       key="0"
