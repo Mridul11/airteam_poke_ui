@@ -10,7 +10,7 @@ export default function About() {
   const [data] = useFetchData(URI, []);
 
   return (
-    <div className='about-center'>
+    <div className='about-center' data-testid='test-aboutpage'>
       {Object.keys(data).length ? <Description data={data} key={data.id} /> : <Spinner />}
     </div>
   );
