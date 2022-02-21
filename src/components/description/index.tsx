@@ -1,6 +1,5 @@
 import { Descriptions, Image } from 'antd';
 import { useEffect, useState } from 'react';
-import getBase64FromUrl from '../../helpers/blob-store';
 
 type DescriptionProps = {
   data: any;
@@ -12,17 +11,15 @@ const Description = ({ data }: DescriptionProps) => {
   const IMAGE_PATH = data?.sprites.other['official-artwork'].front_default;
   useEffect(() => {
     function loadImage() {
-      if (!localStorage.getItem(`description-img-${IMAGE_PATH}-${data.name}`)) {
-        getBase64FromUrl(IMAGE_PATH).then((val) => {
-          setDescriptionImage(val + '');
-          localStorage.setItem(
-            `description-img-${IMAGE_PATH}-${data.name}`,
-            val + ''
-          );
-        });
+      if (!localStorage.getItem(`description-img-${IMAGE_PATH}`)) {
+        setDescriptionImage(IMAGE_PATH + '');
+        localStorage.setItem(
+          `description-img-${IMAGE_PATH}`,
+          IMAGE_PATH + ''
+        );
       } else {
         setDescriptionImage(
-          localStorage.getItem(`description-img-${IMAGE_PATH}-${data.name}`) +
+          localStorage.getItem(`description-img-${IMAGE_PATH}`) +
             ''
         );
       }
