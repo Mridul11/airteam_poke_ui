@@ -5,7 +5,6 @@ import { POKEMONURI } from '../../utils';
 import MAINIMAGE from '../../assets/images/main.jpeg';
 import AVATARIMAGE from '../../assets/images/avatar.jpeg';
 import { useEffect, useState } from 'react';
-import getBase64FromUrl from '../../helpers/blob-store';
 
 const App = () => {
   const [data, isLoading] = useFetchData(POKEMONURI, []);
@@ -15,20 +14,18 @@ const App = () => {
   useEffect(() => {
     function loadImage() {
       if (!localStorage.getItem(`avatar-img-${AVATARIMAGE}`)) {
-        getBase64FromUrl(AVATARIMAGE).then((val) => {
-          avatarImageSet(val + '');
-          localStorage.setItem(`avatar-img-${AVATARIMAGE}`, val + '');
-        });
+        avatarImageSet(AVATARIMAGE);
+        localStorage.setItem(`avatar-img-${AVATARIMAGE}`, AVATARIMAGE);
       } else {
-        avatarImageSet(localStorage.getItem(`avatar-img-${AVATARIMAGE}`) + '');
+        avatarImageSet(
+          String(localStorage.getItem(`avatar-img-${AVATARIMAGE}`))
+        );
       }
       if (!localStorage.getItem(`main-img-${MAINIMAGE}`)) {
-        getBase64FromUrl(MAINIMAGE).then((val) => {
-          mainImageSet(val + '');
-          localStorage.setItem(`main-img-${MAINIMAGE}`, val + '');
-        });
+        mainImageSet(MAINIMAGE);
+        localStorage.setItem(`main-img-${MAINIMAGE}`, MAINIMAGE);
       } else {
-        mainImageSet(localStorage.getItem(`main-img-${MAINIMAGE}`) + '');
+        mainImageSet(String(localStorage.getItem(`main-img-${MAINIMAGE}`)));
       }
     }
     loadImage();
