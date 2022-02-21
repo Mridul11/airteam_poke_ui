@@ -24,7 +24,7 @@ const Description = ({ data }: DescriptionProps) => {
   }, []);
 
   return (
-    <Descriptions title='Pokemon Info'>
+    <Descriptions title='Pokemon Info' data-testid='test-description'>
       <Descriptions.Item label='IMAGE'>
         <Image
           src={descriptionImage}
