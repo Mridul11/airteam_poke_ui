@@ -32,7 +32,7 @@ const App = () => {
   }, []);
 
   const cardsWithData = () => (
-    <div className='App-body'>
+    <div className='App-body' data-testid='test-datacards'>
       {data.results.map((pokemon: any, index: number) => (
         <Cards
           key={index}
@@ -47,7 +47,7 @@ const App = () => {
   );
 
   const cardsWithoutData = () => (
-    <div className='App-body'>
+    <div className='App-body' data-testid='test-cardswithoutdata'>
       {Array(10)
         .fill(1)
         .map((val, index) => (
