@@ -12,15 +12,11 @@ const Description = ({ data }: DescriptionProps) => {
   useEffect(() => {
     function loadImage() {
       if (!localStorage.getItem(`description-img-${IMAGE_PATH}`)) {
-        setDescriptionImage(IMAGE_PATH + '');
-        localStorage.setItem(
-          `description-img-${IMAGE_PATH}`,
-          IMAGE_PATH + ''
-        );
+        setDescriptionImage(IMAGE_PATH);
+        localStorage.setItem(`description-img-${IMAGE_PATH}`, IMAGE_PATH);
       } else {
         setDescriptionImage(
-          localStorage.getItem(`description-img-${IMAGE_PATH}`) +
-            ''
+          String(localStorage.getItem(`description-img-${IMAGE_PATH}`))
         );
       }
     }
