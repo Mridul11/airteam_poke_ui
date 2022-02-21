@@ -14,16 +14,18 @@ const App = () => {
   useEffect(() => {
     function loadImage() {
       if (!localStorage.getItem(`avatar-img-${AVATARIMAGE}`)) {
-        avatarImageSet(AVATARIMAGE + '');
-        localStorage.setItem(`avatar-img-${AVATARIMAGE}`, AVATARIMAGE + '');
+        avatarImageSet(AVATARIMAGE);
+        localStorage.setItem(`avatar-img-${AVATARIMAGE}`, AVATARIMAGE);
       } else {
-        avatarImageSet(localStorage.getItem(`avatar-img-${AVATARIMAGE}`) + '');
+        avatarImageSet(
+          String(localStorage.getItem(`avatar-img-${AVATARIMAGE}`))
+        );
       }
       if (!localStorage.getItem(`main-img-${MAINIMAGE}`)) {
-        mainImageSet(MAINIMAGE + '');
-        localStorage.setItem(`main-img-${MAINIMAGE}`, MAINIMAGE + '');
+        mainImageSet(MAINIMAGE);
+        localStorage.setItem(`main-img-${MAINIMAGE}`, MAINIMAGE);
       } else {
-        mainImageSet(localStorage.getItem(`main-img-${MAINIMAGE}`) + '');
+        mainImageSet(String(localStorage.getItem(`main-img-${MAINIMAGE}`)));
       }
     }
     loadImage();
