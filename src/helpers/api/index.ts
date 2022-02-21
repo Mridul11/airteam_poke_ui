@@ -5,13 +5,13 @@ interface DataCallback {
   (data: []): void;
 }
 
-export default function fetchDataService(
+export default async function fetchDataService(
   url: string,
   isLoadingSet: LoadingCallback,
   dataSet: DataCallback
 ) {
   let fetchedData = {};
-  const cached = window.localStorage.getItem(`cached-${url}`);
+  const cached =  window.localStorage.getItem(`cached-${url}`);
 
   isLoadingSet(true);
   if (`cached-${url}` in window.localStorage) {

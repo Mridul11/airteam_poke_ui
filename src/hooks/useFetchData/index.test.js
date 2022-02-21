@@ -10,6 +10,8 @@ describe('testing custom hook useFetchData', () => {
             return null;
         }
         mount(<HookWrapper />)
+        console.log(results);
+        expect(results).toBeDefined();
+
     });
-    console.log(results);
 });
