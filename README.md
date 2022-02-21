@@ -15,3 +15,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn build`
+generates a prodcution build of the application.
+We can test pwa locally only with this build.
+
+### `serve -s build`
+serve the build folder and enables us to test pwa functionality in the browser local server
+- http://localhost:3000/
