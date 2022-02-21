@@ -13,8 +13,6 @@ export default function fetchDataService(
   let fetchedData = {};
   const cached = window.localStorage.getItem(`cached-${url}`);
 
-  console.log('url: ', url);
-
   isLoadingSet(true);
   if (`cached-${url}` in window.localStorage) {
     dataSet(JSON.parse(String(cached)));
@@ -31,6 +29,4 @@ export default function fetchDataService(
       })
       .catch((err) => console.log(err));
   }
-  console.log(fetchedData);
-  return fetchedData;
 }
