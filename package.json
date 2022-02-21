@@ -2,6 +2,10 @@
   "name": "airteam_poke_ui",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Mridul Mishra",
+    "email": "mridulmishra2991@gmail.com"
+  },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -36,13 +40,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build && npm run build-sw",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src",
     "prettier:fix": "prettier --write",
-    "prettier:check": "prettier --check .",
-    "build-sw": "node ./src/sw-build.js"
+    "prettier:check": "prettier --check ."
   },
   "eslintConfig": {
     "extends": [
