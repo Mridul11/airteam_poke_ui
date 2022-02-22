@@ -3,6 +3,7 @@
 exports[`About Component should match snapshot 1`] = `
 <div
   className="about-center"
+  data-testid="test-aboutpage"
 >
   <Spinner />
 </div>

@@ -6,7 +6,7 @@ exports[`cards component renders cards element 1`] = `
   data-testid="test-cards"
 >
   <div
-    class="ant-card ant-card-bordered"
+    class="ant-card ant-card-bordered test-card"
   >
     <div
       class="ant-card-cover"
@@ -46,6 +46,7 @@ exports[`cards component renders cards element 1`] = `
           >
             <button
               class="ant-btn ant-btn-default"
+              data-testid="test-knowmorebtn"
               type="button"
             >
               <a
