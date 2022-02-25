@@ -1,8 +1,8 @@
-import { act, render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import {act, render, screen} from '@testing-library/react';
+import {MemoryRouter} from 'react-router-dom';
 import PagesHeader from '.';
 import AddWatchMedia from '../../utils/test-utils/add-matchmedia';
-import { describe, beforeAll, test, expect } from '@jest/globals';
+import {describe, beforeAll, test, expect} from '@jest/globals';
 
 describe('PagesHeader component', () => {
   beforeAll(AddWatchMedia);
@@ -10,10 +10,10 @@ describe('PagesHeader component', () => {
   test('renders PagesHeader element', async () => {
     await act(async () =>
       render(
-        <MemoryRouter>
-          <PagesHeader />
-        </MemoryRouter>
-      )
+          <MemoryRouter>
+            <PagesHeader />
+          </MemoryRouter>,
+      ),
     );
     const PagesHeaderElement = screen.getByText('POKEDEK');
     expect(PagesHeaderElement).toMatchSnapshot();

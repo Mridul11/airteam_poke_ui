@@ -4,4 +4,4 @@ import Description from './description';
 import Spinner from './spinner';
 import Cards from './cards';
 
-export { Cards, PagesHeader, LoaderCards, Description, Spinner };
+export {Cards, PagesHeader, LoaderCards, Description, Spinner};

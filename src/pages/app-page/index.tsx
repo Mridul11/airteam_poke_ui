@@ -1,10 +1,10 @@
 import './app.css';
-import { Cards, LoaderCards } from '../../components';
-import { useFetchData } from '../../hooks';
-import { POKEMONURI } from '../../utils';
+import {Cards, LoaderCards} from '../../components';
+import {useFetchData} from '../../hooks';
+import {POKEMONURI} from '../../utils';
 const MAINIMAGE = require('../../assets/images/main.jpeg');
 const AVATARIMAGE = require('../../assets/images/avatar.jpeg');
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 const App = () => {
   const [data, isLoading] = useFetchData(POKEMONURI, []);
@@ -18,7 +18,7 @@ const App = () => {
         localStorage.setItem(`avatar-img-${AVATARIMAGE}`, AVATARIMAGE);
       } else {
         avatarImageSet(
-          String(localStorage.getItem(`avatar-img-${AVATARIMAGE}`))
+            String(localStorage.getItem(`avatar-img-${AVATARIMAGE}`)),
         );
       }
       if (!localStorage.getItem(`main-img-${MAINIMAGE}`)) {
@@ -49,10 +49,10 @@ const App = () => {
   const cardsWithoutData = () => (
     <div className='App-body' data-testid='test-cardswithoutdata'>
       {Array(10)
-        .fill(1)
-        .map((val, index) => (
-          <LoaderCards key={index} />
-        ))}
+          .fill(1)
+          .map((val, index) => (
+            <LoaderCards key={index} />
+          ))}
     </div>
   );
   return (

@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { PagesHeader } from '../../components';
-import { About, App } from '../../pages';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {PagesHeader} from '../../components';
+import {About, App} from '../../pages';
 
 const AppRoutes = () => (
   <>

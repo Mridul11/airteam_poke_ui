@@ -26,7 +26,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 0,
     'react/jsx-filename-extension': [
       1,
-      { extensions: ['.js', '.jsx', '.tsx', '.jpeg', '.png'] },
+      {extensions: ['.js', '.jsx', '.tsx', '.jpeg', '.png']},
     ],
   },
 };

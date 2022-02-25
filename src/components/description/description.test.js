@@ -1,8 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import {render, screen} from '@testing-library/react';
+import {MemoryRouter} from 'react-router-dom';
 import Description from '.';
 import AddWatchMedia from '../../utils/test-utils/add-matchmedia';
-import { describe, beforeAll, test, expect } from '@jest/globals';
+import {describe, beforeAll, test, expect} from '@jest/globals';
 
 describe('description component', () => {
   beforeAll(AddWatchMedia);
@@ -20,9 +20,9 @@ describe('description component', () => {
 
   test('renders description element', () => {
     render(
-      <MemoryRouter>
-        <Description data={DATA} />
-      </MemoryRouter>
+        <MemoryRouter>
+          <Description data={DATA} />
+        </MemoryRouter>,
     );
     const description = screen.getByText('Pokemon Info');
     expect(description).toMatchSnapshot();
