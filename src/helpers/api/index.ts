@@ -27,6 +27,6 @@ export default function fetchDataService(
         fetchedData = { ...data };
         isLoadingSet(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log('error is: ', err));
   }
 }
