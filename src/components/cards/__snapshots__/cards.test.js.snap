@@ -6,7 +6,8 @@ exports[`cards component renders cards element 1`] = `
   data-testid="test-cards"
 >
   <div
-    class="ant-card ant-card-bordered test-card"
+    class="ant-card ant-card-bordered"
+    data-testid="test-card"
   >
     <div
       class="ant-card-cover"

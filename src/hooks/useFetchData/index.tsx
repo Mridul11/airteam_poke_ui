@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import fetchDataService from '../../helpers/api';
 
 export default function useFetchData(url: string, dependencies: Array<any>) {

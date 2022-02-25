@@ -1,4 +1,4 @@
-import { Spin, Alert } from 'antd';
+import {Spin, Alert} from 'antd';
 
 const Spinner = () => (
   <Spin tip='Loading...' data-testid='test-spinner'>

@@ -1,6 +1,7 @@
 import useFetchData from '.';
-import { POKEMONURI } from '../../utils';
-import { mount } from 'enzyme';
+import {POKEMONURI} from '../../utils';
+import {mount} from 'enzyme';
+import {it, describe, expect} from '@jest/globals';
 
 describe('testing custom hook useFetchData', () => {
   let results;

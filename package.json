@@ -41,7 +41,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "CI=false react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false --bail",
     "eject": "react-scripts eject",
     "lint": "eslint src",
     "prettier:fix": "prettier --write",
@@ -68,10 +68,15 @@
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.11",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "cypress": "^9.5.0",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.29.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
     "msw": "^0.36.8",
@@ -79,9 +84,10 @@
     "workbox-build": "^6.4.2"
   },
   "lint-staged": {
-    "src/*{ts,tsx}": [
-      "yarn prettier:fix",
-      "yarn lint"
+    "src/*{js, ts,tsx}": [
+      "yarn eslint --fix",
+      "yarn prettier --write",
+      "yarn test"
     ]
   },
   "jest": {
