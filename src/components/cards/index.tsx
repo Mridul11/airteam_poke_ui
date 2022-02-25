@@ -1,7 +1,7 @@
 import './cards.css';
-import {Card, Avatar, Tooltip, Button} from 'antd';
-import {Link} from 'react-router-dom';
-import {ReactElement, ReactFragment} from 'react';
+import { Card, Avatar, Tooltip, Button } from 'antd';
+import { Link } from 'react-router-dom';
+import { ReactElement, ReactFragment } from 'react';
 
 type CardsProps = {
   name: string;
@@ -10,7 +10,7 @@ type CardsProps = {
   avatarImage: string;
 };
 
-const {Meta} = Card;
+const { Meta } = Card;
 
 const Cards: ReactFragment = ({
   name,

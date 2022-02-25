@@ -1,7 +1,7 @@
-import {render, screen} from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Spinner from '.';
 import AddWatchMedia from '../../utils/test-utils/add-matchmedia';
-import {describe, beforeAll, test, expect} from '@jest/globals';
+import { describe, beforeAll, test, expect } from '@jest/globals';
 
 describe('Spinner component', () => {
   beforeAll(AddWatchMedia);

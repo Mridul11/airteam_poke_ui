@@ -86,7 +86,6 @@
   "lint-staged": {
     "src/*{js, ts,tsx}": [
       "yarn eslint --fix",
-      "yarn prettier:fix",
       "yarn test --passWithNoTests"
     ]
   },

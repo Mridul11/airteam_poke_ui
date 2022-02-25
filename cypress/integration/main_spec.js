@@ -1,4 +1,4 @@
-import {cy} from 'cypress';
+import { cy } from 'cypress';
 
 describe('Testing Pokedek App', () => {
   const LOCALSTORAGE_HOME = 'cached-https://pokeapi.co/api/v2/pokemon/';
@@ -22,7 +22,7 @@ describe('Testing Pokedek App', () => {
       expect(response.status).to.eq(200);
       expect(localStorage.getItem(LOCALSTORAGE_HOME)).not.to.null;
       expect(localStorage.getItem(LOCALSTORAGE_HOME)).to.eq(
-          JSON.stringify(response.body),
+        JSON.stringify(response.body)
       );
     });
   });
@@ -43,8 +43,8 @@ describe('Test for about page', () => {
   it('should click on button', () => {
     cy.visit('https://infallible-benz-96616c.netlify.app');
     cy.get('[data-testid="test-datacards"]')
-        .find('button')
-        .should('have.length', 20);
+      .find('button')
+      .should('have.length', 20);
     cy.get('[data-testid="test-datacards"]').find('button').first().click();
   });
 
@@ -54,7 +54,7 @@ describe('Test for about page', () => {
       expect(response.status).to.eq(200);
       expect(localStorage.getItem(LOCALSTORAGE_ABOUT)).not.to.null;
       expect(localStorage.getItem(LOCALSTORAGE_ABOUT)).to.eq(
-          JSON.stringify(response.body),
+        JSON.stringify(response.body)
       );
     });
   });

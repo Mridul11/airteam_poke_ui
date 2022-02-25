@@ -1,8 +1,8 @@
 import './pages-header.css';
-import {Menu} from 'antd';
-import {Header} from 'antd/lib/layout/layout';
-import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import { Menu } from 'antd';
+import { Header } from 'antd/lib/layout/layout';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function PagesHeader() {
   const [selectedKey, selectedKeySet] = useState('1');

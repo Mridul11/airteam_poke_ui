@@ -1,7 +1,7 @@
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import AddWatchMedia from '../../utils/test-utils/add-matchmedia';
 import About from '.';
-import {it, describe, beforeEach, beforeAll, expect} from '@jest/globals';
+import { it, describe, beforeEach, beforeAll, expect } from '@jest/globals';
 
 describe('About Component', () => {
   let wrapper;

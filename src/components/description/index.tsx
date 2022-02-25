@@ -1,12 +1,12 @@
-import {Descriptions, Image} from 'antd';
-import {useEffect, useState} from 'react';
+import { Descriptions, Image } from 'antd';
+import { useEffect, useState } from 'react';
 
 type DescriptionProps = {
   data: any;
   key: number;
 };
 
-const Description = ({data}: DescriptionProps) => {
+const Description = ({ data }: DescriptionProps) => {
   const [descriptionImage, setDescriptionImage] = useState<string>('');
   const IMAGE_PATH = data?.sprites.other['official-artwork'].front_default;
   useEffect(() => {
@@ -16,7 +16,7 @@ const Description = ({data}: DescriptionProps) => {
         localStorage.setItem(`description-img-${IMAGE_PATH}`, IMAGE_PATH);
       } else {
         setDescriptionImage(
-            String(localStorage.getItem(`description-img-${IMAGE_PATH}`)),
+          String(localStorage.getItem(`description-img-${IMAGE_PATH}`))
         );
       }
     }
