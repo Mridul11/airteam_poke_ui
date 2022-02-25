@@ -87,7 +87,7 @@
     "src/*{js, ts,tsx}": [
       "yarn eslint --fix",
       "yarn prettier --write",
-      "yarn test"
+      "yarn test --passWithNoTests"
     ]
   },
   "jest": {
