@@ -25,13 +25,16 @@ We can test pwa locally only with this build.
 
 serve the build folder and enables us to test pwa functionality in the browser local server
 please install yarn add serve --global
+
 - https://yarnpkg.com/package/serve
 - http://localhost:3000/
 
 ### `yarn e2e`
 
 This commands runs the end to end tests using cypress.
+
 - https://www.cypress.io/
 
 ## Deployed App url
+
 - https://infallible-benz-96616c.netlify.app/

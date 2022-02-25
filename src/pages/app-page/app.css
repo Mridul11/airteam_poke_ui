@@ -1,9 +1,9 @@
 @import '~antd/dist/antd.css';
-.App{
+.App {
   margin-top: 10px;
 }
 
-.App-body{
+.App-body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

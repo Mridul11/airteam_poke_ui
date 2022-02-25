@@ -1,11 +1,19 @@
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import axios from 'axios';
 import AddWatchMedia from '../../utils/test-utils/add-matchmedia';
 import App from '.';
-import {POKEMONURI} from '../../utils';
-import {act, render, waitFor, screen, cleanup} from '@testing-library/react';
-import {MemoryRouter} from 'react-router-dom';
-import {describe, beforeEach, it, afterAll, beforeAll, test, expect} from '@jest/globals';
+import { POKEMONURI } from '../../utils';
+import { act, render, waitFor, screen, cleanup } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import {
+  describe,
+  beforeEach,
+  it,
+  afterAll,
+  beforeAll,
+  test,
+  expect,
+} from '@jest/globals';
 
 describe('App Component', () => {
   let wrapper;
@@ -38,10 +46,10 @@ describe('App Component', () => {
   test('cards with data', async () => {
     await act(async () =>
       render(
-          <MemoryRouter>
-            <App />
-          </MemoryRouter>,
-      ),
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      )
     );
 
     await waitFor(() => {

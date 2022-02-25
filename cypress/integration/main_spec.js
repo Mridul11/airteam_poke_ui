@@ -29,14 +29,14 @@ describe('Testing Pokedek App', () => {
 describe('Test for about page', () => {
   const LOCALSTORAGE_ABOUT = 'cached-https://pokeapi.co/api/v2/pokemon/1';
 
-    it('fetches the data', () => {
-      cy.request('https://pokeapi.co/api/v2/pokemon/1').as('abouts');
-      cy.visit('https://infallible-benz-96616c.netlify.app');
-      cy.get('@abouts').should((response) => {
-        expect(response.status).to.eq(200);
-        expect(response.body.name).to.eq('bulbasaur');
-      });
+  it('fetches the data', () => {
+    cy.request('https://pokeapi.co/api/v2/pokemon/1').as('abouts');
+    cy.visit('https://infallible-benz-96616c.netlify.app');
+    cy.get('@abouts').should((response) => {
+      expect(response.status).to.eq(200);
+      expect(response.body.name).to.eq('bulbasaur');
     });
+  });
 
   it('should click on button', () => {
     cy.visit('https://infallible-benz-96616c.netlify.app');

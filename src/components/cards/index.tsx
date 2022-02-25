@@ -1,7 +1,7 @@
 import './cards.css';
-import {Card, Avatar, Tooltip, Button} from 'antd';
-import {Link} from 'react-router-dom';
-import {ReactElement, ReactFragment} from 'react';
+import { Card, Avatar, Tooltip, Button } from 'antd';
+import { Link } from 'react-router-dom';
+import { ReactElement, ReactFragment } from 'react';
 
 type CardsProps = {
   name: string;
@@ -10,9 +10,14 @@ type CardsProps = {
   avatarImage: string;
 };
 
-const {Meta} = Card;
+const { Meta } = Card;
 
-const Cards: ReactFragment = ({name, index, mainImage, avatarImage}: CardsProps) => {
+const Cards: ReactFragment = ({
+  name,
+  index,
+  mainImage,
+  avatarImage,
+}: CardsProps) => {
   return (
     <div className='cards-spacing' data-testid='test-cards'>
       <Tooltip placement='topLeft' title={name} data-testid='test-tip'>
